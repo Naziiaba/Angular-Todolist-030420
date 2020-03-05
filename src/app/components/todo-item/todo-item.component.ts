@@ -18,7 +18,7 @@ export class TodoItemComponent implements OnInit {
 
   // set Dynamic Classes
   setClasses() {
-    let classes = {
+    const classes = {
       todo: true,
       'is-complete': this.todo.completed
     };
@@ -30,6 +30,7 @@ export class TodoItemComponent implements OnInit {
     // Toggle in UI
     todo.completed = !todo.completed;
     // Toggle on server
+    // tslint:disable-next-line: no-shadowed-variable
     this.todoService.toggleCompleted(todo).subscribe(todo => console.log(todo));
   }
 

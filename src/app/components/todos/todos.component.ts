@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from '../../services/todo.service'
+import { TodoService } from '../../services/todo.service';
 import { Todo } from '../../models/Todo';
 
 @Component({
@@ -20,7 +20,9 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(todo: Todo) {
+    // Remove items from UI
     this.todos = this.todos.filter(t => t.id !== todo.id);
+    // Removing items from server
     this.todoService.deleteTodo(todo).subscribe();
   }
 
