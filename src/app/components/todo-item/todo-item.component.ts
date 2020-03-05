@@ -13,7 +13,7 @@ export class TodoItemComponent implements OnInit {
 
   constructor(private todoService: TodoService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   // set Dynamic Classes
@@ -30,8 +30,7 @@ export class TodoItemComponent implements OnInit {
     // Toggle in UI
     todo.completed = !todo.completed;
     // Toggle on server
-    this.todoService.toggleCompleted(todo).subscribe(todo =>
-      console.log(todo));
+    this.todoService.toggleCompleted(todo).subscribe(todo => console.log(todo));
   }
 
   onDelete(todo) {
